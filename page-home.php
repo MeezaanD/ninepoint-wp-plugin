@@ -21,41 +21,58 @@ get_header(); ?>
 </section>
 <?php endif; ?>
 
-<!-- Content Blocks -->
-<?php if(have_rows('content_blocks')): ?>
-    <?php 
-    $block_count = 2;
-    while(have_rows('content_blocks')): the_row(); 
-    ?>
-        <section class="content-block <?php echo get_sub_field('reverse_layout') ? 'reverse' : ''; ?>" id="section<?php echo $block_count; ?>">
-            <?php if(get_sub_field('image')): ?>
-                <div class="content-block-image" style="background-image: url('<?php echo esc_url(get_sub_field('image')['url']); ?>'); background-size: cover; background-position: center;"></div>
-            <?php else: ?>
-                <div class="content-block-image"></div>
-            <?php endif; ?>
-            
-            <div class="content-block-text">
-                <?php if(get_sub_field('label')): ?>
-                    <div class="block-label"><?php the_sub_field('label'); ?></div>
-                <?php endif; ?>
-                
-                <?php if(get_sub_field('title')): ?>
-                    <h2 class="block-title"><?php the_sub_field('title'); ?></h2>
-                <?php endif; ?>
-                
-                <?php if(get_sub_field('content')): ?>
-                    <div class="block-content"><?php the_sub_field('content'); ?></div>
-                <?php endif; ?>
-                
-                <?php if(get_sub_field('link_url') && get_sub_field('link_text')): ?>
-                    <a href="<?php the_sub_field('link_url'); ?>" class="btn-link"><?php the_sub_field('link_text'); ?></a>
-                <?php endif; ?>
-            </div>
-        </section>
-    <?php 
-    $block_count++;
-    endwhile; 
-    ?>
+<!-- Content Block 1 -->
+<?php if(get_field('block1_title')): ?>
+<section class="content-block" id="section2">
+    <?php if(get_field('block1_image')): ?>
+        <div class="content-block-image" style="background-image: url('<?php echo esc_url(get_field('block1_image')['url']); ?>'); background-size: cover; background-position: center;"></div>
+    <?php else: ?>
+        <div class="content-block-image"></div>
+    <?php endif; ?>
+    
+    <div class="content-block-text">
+        <?php if(get_field('block1_label')): ?>
+            <div class="block-label"><?php the_field('block1_label'); ?></div>
+        <?php endif; ?>
+        
+        <h2 class="block-title"><?php the_field('block1_title'); ?></h2>
+        
+        <?php if(get_field('block1_content')): ?>
+            <div class="block-content"><?php the_field('block1_content'); ?></div>
+        <?php endif; ?>
+        
+        <?php if(get_field('block1_link_url') && get_field('block1_link_text')): ?>
+            <a href="<?php the_field('block1_link_url'); ?>" class="btn-link"><?php the_field('block1_link_text'); ?></a>
+        <?php endif; ?>
+    </div>
+</section>
+<?php endif; ?>
+
+<!-- Content Block 2 -->
+<?php if(get_field('block2_title')): ?>
+<section class="content-block reverse" id="section3">
+    <?php if(get_field('block2_image')): ?>
+        <div class="content-block-image" style="background-image: url('<?php echo esc_url(get_field('block2_image')['url']); ?>'); background-size: cover; background-position: center;"></div>
+    <?php else: ?>
+        <div class="content-block-image"></div>
+    <?php endif; ?>
+    
+    <div class="content-block-text">
+        <?php if(get_field('block2_label')): ?>
+            <div class="block-label"><?php the_field('block2_label'); ?></div>
+        <?php endif; ?>
+        
+        <h2 class="block-title"><?php the_field('block2_title'); ?></h2>
+        
+        <?php if(get_field('block2_content')): ?>
+            <div class="block-content"><?php the_field('block2_content'); ?></div>
+        <?php endif; ?>
+        
+        <?php if(get_field('block2_link_url') && get_field('block2_link_text')): ?>
+            <a href="<?php the_field('block2_link_url'); ?>" class="btn-link"><?php the_field('block2_link_text'); ?></a>
+        <?php endif; ?>
+    </div>
+</section>
 <?php endif; ?>
 
 <!-- Card Grid Section -->
@@ -69,54 +86,99 @@ get_header(); ?>
         <?php endif; ?>
     </div>
     
-    <?php if(have_rows('card_grid_items')): ?>
-        <div class="card-grid masonry">
-            <?php while(have_rows('card_grid_items')): the_row(); 
-                $size = get_sub_field('card_size'); // large, medium, small
-                $size_class = $size ? $size : 'medium';
-            ?>
-                <div class="card-item <?php echo esc_attr($size_class); ?>">
-                    <?php if(get_sub_field('title')): ?>
-                        <h3 class="card-title"><?php the_sub_field('title'); ?></h3>
-                    <?php endif; ?>
-                    
-                    <?php if(get_sub_field('content')): ?>
-                        <p class="card-text"><?php the_sub_field('content'); ?></p>
-                    <?php endif; ?>
-                </div>
-            <?php endwhile; ?>
+    <div class="card-grid masonry">
+        <?php if(get_field('card1_title')): ?>
+        <div class="card-item <?php echo get_field('card1_size') ? get_field('card1_size') : 'medium'; ?>">
+            <h3 class="card-title"><?php the_field('card1_title'); ?></h3>
+            <?php if(get_field('card1_content')): ?>
+                <p class="card-text"><?php the_field('card1_content'); ?></p>
+            <?php endif; ?>
         </div>
-    <?php endif; ?>
+        <?php endif; ?>
+        
+        <?php if(get_field('card2_title')): ?>
+        <div class="card-item <?php echo get_field('card2_size') ? get_field('card2_size') : 'medium'; ?>">
+            <h3 class="card-title"><?php the_field('card2_title'); ?></h3>
+            <?php if(get_field('card2_content')): ?>
+                <p class="card-text"><?php the_field('card2_content'); ?></p>
+            <?php endif; ?>
+        </div>
+        <?php endif; ?>
+        
+        <?php if(get_field('card3_title')): ?>
+        <div class="card-item <?php echo get_field('card3_size') ? get_field('card3_size') : 'medium'; ?>">
+            <h3 class="card-title"><?php the_field('card3_title'); ?></h3>
+            <?php if(get_field('card3_content')): ?>
+                <p class="card-text"><?php the_field('card3_content'); ?></p>
+            <?php endif; ?>
+        </div>
+        <?php endif; ?>
+        
+        <?php if(get_field('card4_title')): ?>
+        <div class="card-item <?php echo get_field('card4_size') ? get_field('card4_size') : 'medium'; ?>">
+            <h3 class="card-title"><?php the_field('card4_title'); ?></h3>
+            <?php if(get_field('card4_content')): ?>
+                <p class="card-text"><?php the_field('card4_content'); ?></p>
+            <?php endif; ?>
+        </div>
+        <?php endif; ?>
+        
+        <?php if(get_field('card5_title')): ?>
+        <div class="card-item <?php echo get_field('card5_size') ? get_field('card5_size') : 'medium'; ?>">
+            <h3 class="card-title"><?php the_field('card5_title'); ?></h3>
+            <?php if(get_field('card5_content')): ?>
+                <p class="card-text"><?php the_field('card5_content'); ?></p>
+            <?php endif; ?>
+        </div>
+        <?php endif; ?>
+    </div>
 </section>
 <?php endif; ?>
 
 <!-- Bottom Card Row -->
-<?php if(have_rows('bottom_cards')): ?>
 <section class="bottom-card-row" id="section5">
-    <?php while(have_rows('bottom_cards')): the_row(); ?>
-        <div class="card-with-link">
-            <?php if(get_sub_field('title')): ?>
-                <h3 class="card-title"><?php the_sub_field('title'); ?></h3>
-            <?php endif; ?>
-            
-            <?php if(get_sub_field('content')): ?>
-                <p class="card-text"><?php the_sub_field('content'); ?></p>
-            <?php endif; ?>
-            
-            <?php if(get_sub_field('link_url') && get_sub_field('link_text')): ?>
-                <a href="<?php the_sub_field('link_url'); ?>" class="card-link"><?php the_sub_field('link_text'); ?></a>
-            <?php endif; ?>
-        </div>
-    <?php endwhile; ?>
+    <?php if(get_field('bottom_card1_title')): ?>
+    <div class="card-with-link">
+        <h3 class="card-title"><?php the_field('bottom_card1_title'); ?></h3>
+        <?php if(get_field('bottom_card1_content')): ?>
+            <p class="card-text"><?php the_field('bottom_card1_content'); ?></p>
+        <?php endif; ?>
+        <?php if(get_field('bottom_card1_link_url') && get_field('bottom_card1_link_text')): ?>
+            <a href="<?php the_field('bottom_card1_link_url'); ?>" class="card-link"><?php the_field('bottom_card1_link_text'); ?></a>
+        <?php endif; ?>
+    </div>
+    <?php endif; ?>
+    
+    <?php if(get_field('bottom_card2_title')): ?>
+    <div class="card-with-link">
+        <h3 class="card-title"><?php the_field('bottom_card2_title'); ?></h3>
+        <?php if(get_field('bottom_card2_content')): ?>
+            <p class="card-text"><?php the_field('bottom_card2_content'); ?></p>
+        <?php endif; ?>
+        <?php if(get_field('bottom_card2_link_url') && get_field('bottom_card2_link_text')): ?>
+            <a href="<?php the_field('bottom_card2_link_url'); ?>" class="card-link"><?php the_field('bottom_card2_link_text'); ?></a>
+        <?php endif; ?>
+    </div>
+    <?php endif; ?>
+    
+    <?php if(get_field('bottom_card3_title')): ?>
+    <div class="card-with-link">
+        <h3 class="card-title"><?php the_field('bottom_card3_title'); ?></h3>
+        <?php if(get_field('bottom_card3_content')): ?>
+            <p class="card-text"><?php the_field('bottom_card3_content'); ?></p>
+        <?php endif; ?>
+        <?php if(get_field('bottom_card3_link_url') && get_field('bottom_card3_link_text')): ?>
+            <a href="<?php the_field('bottom_card3_link_url'); ?>" class="card-link"><?php the_field('bottom_card3_link_text'); ?></a>
+        <?php endif; ?>
+    </div>
+    <?php endif; ?>
 </section>
-<?php endif; ?>
 
 <!-- Geometric Pattern Section -->
 <?php if(get_field('pattern_enable')): ?>
 <section class="pattern-section" id="section6">
     <div class="geometric-pattern">
         <?php 
-        // Pattern layout definition (6x6 grid)
         $pattern = array(
             array('dark', 'dark', '', '', '', ''),
             array('dark', 'dark', '', 'darker', 'darker', ''),

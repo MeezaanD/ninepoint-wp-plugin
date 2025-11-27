@@ -1,6 +1,6 @@
 [
   {
-    "key": "group_home_page",
+    "key": "group_home_page_free",
     "title": "Home Page Fields",
     "fields": [
       {
@@ -16,107 +16,103 @@
         "label": "Hero Label",
         "name": "hero_label",
         "type": "text",
-        "default_value": "Heading",
-        "conditional_logic": [
-          [
-            {
-              "field": "field_hero_enable",
-              "operator": "==",
-              "value": "1"
-            }
-          ]
-        ]
+        "default_value": "Heading"
       },
       {
         "key": "field_hero_title",
         "label": "Hero Title",
         "name": "hero_title",
         "type": "text",
-        "default_value": "Introduction",
-        "conditional_logic": [
-          [
-            {
-              "field": "field_hero_enable",
-              "operator": "==",
-              "value": "1"
-            }
-          ]
-        ]
+        "default_value": "Introduction"
       },
       {
         "key": "field_hero_content",
         "label": "Hero Content",
         "name": "hero_content",
         "type": "textarea",
-        "rows": 4,
-        "conditional_logic": [
-          [
-            {
-              "field": "field_hero_enable",
-              "operator": "==",
-              "value": "1"
-            }
-          ]
-        ]
+        "rows": 4
       },
       {
-        "key": "field_content_blocks",
-        "label": "Content Blocks",
-        "name": "content_blocks",
-        "type": "repeater",
-        "layout": "block",
-        "button_label": "Add Content Block",
-        "sub_fields": [
-          {
-            "key": "field_block_label",
-            "label": "Label",
-            "name": "label",
-            "type": "text",
-            "default_value": "Heading"
-          },
-          {
-            "key": "field_block_title",
-            "label": "Title",
-            "name": "title",
-            "type": "text",
-            "default_value": "Title"
-          },
-          {
-            "key": "field_block_content",
-            "label": "Content",
-            "name": "content",
-            "type": "textarea",
-            "rows": 4
-          },
-          {
-            "key": "field_block_image",
-            "label": "Image",
-            "name": "image",
-            "type": "image",
-            "return_format": "array"
-          },
-          {
-            "key": "field_block_link_text",
-            "label": "Link Text",
-            "name": "link_text",
-            "type": "text",
-            "default_value": "LINK"
-          },
-          {
-            "key": "field_block_link_url",
-            "label": "Link URL",
-            "name": "link_url",
-            "type": "url"
-          },
-          {
-            "key": "field_block_reverse",
-            "label": "Reverse Layout",
-            "name": "reverse_layout",
-            "type": "true_false",
-            "default_value": 0,
-            "ui": 1
-          }
-        ]
+        "key": "field_block1_label",
+        "label": "Content Block 1 - Label",
+        "name": "block1_label",
+        "type": "text",
+        "default_value": "Heading"
+      },
+      {
+        "key": "field_block1_title",
+        "label": "Content Block 1 - Title",
+        "name": "block1_title",
+        "type": "text",
+        "default_value": "Title"
+      },
+      {
+        "key": "field_block1_content",
+        "label": "Content Block 1 - Content",
+        "name": "block1_content",
+        "type": "textarea",
+        "rows": 4
+      },
+      {
+        "key": "field_block1_image",
+        "label": "Content Block 1 - Image",
+        "name": "block1_image",
+        "type": "image",
+        "return_format": "array"
+      },
+      {
+        "key": "field_block1_link_text",
+        "label": "Content Block 1 - Link Text",
+        "name": "block1_link_text",
+        "type": "text",
+        "default_value": "LINK"
+      },
+      {
+        "key": "field_block1_link_url",
+        "label": "Content Block 1 - Link URL",
+        "name": "block1_link_url",
+        "type": "url"
+      },
+      {
+        "key": "field_block2_label",
+        "label": "Content Block 2 - Label",
+        "name": "block2_label",
+        "type": "text",
+        "default_value": "Heading"
+      },
+      {
+        "key": "field_block2_title",
+        "label": "Content Block 2 - Title",
+        "name": "block2_title",
+        "type": "text",
+        "default_value": "Title"
+      },
+      {
+        "key": "field_block2_content",
+        "label": "Content Block 2 - Content",
+        "name": "block2_content",
+        "type": "textarea",
+        "rows": 4
+      },
+      {
+        "key": "field_block2_image",
+        "label": "Content Block 2 - Image",
+        "name": "block2_image",
+        "type": "image",
+        "return_format": "array"
+      },
+      {
+        "key": "field_block2_link_text",
+        "label": "Content Block 2 - Link Text",
+        "name": "block2_link_text",
+        "type": "text",
+        "default_value": "LINK"
+      },
+      {
+        "key": "field_block2_link_url",
+        "label": "Content Block 2 - Link URL",
+        "name": "block2_link_url",
+        "type": "url"
       },
       {
         "key": "field_card_grid_enable",
@@ -131,99 +127,218 @@
         "label": "Dropdown Text",
         "name": "card_grid_dropdown_text",
         "type": "text",
-        "default_value": "Select",
-        "conditional_logic": [
-          [
-            {
-              "field": "field_card_grid_enable",
-              "operator": "==",
-              "value": "1"
-            }
-          ]
-        ]
+        "default_value": "Select"
       },
       {
-        "key": "field_card_grid_items",
-        "label": "Card Grid Items",
-        "name": "card_grid_items",
-        "type": "repeater",
-        "layout": "table",
-        "button_label": "Add Card",
-        "conditional_logic": [
-          [
-            {
-              "field": "field_card_grid_enable",
-              "operator": "==",
-              "value": "1"
-            }
-          ]
-        ],
-        "sub_fields": [
-          {
-            "key": "field_card_title",
-            "label": "Title",
-            "name": "title",
-            "type": "text",
-            "default_value": "Title"
-          },
-          {
-            "key": "field_card_content",
-            "label": "Content",
-            "name": "content",
-            "type": "textarea",
-            "rows": 3
-          },
-          {
-            "key": "field_card_size",
-            "label": "Card Size",
-            "name": "card_size",
-            "type": "select",
-            "choices": {
-              "small": "Small",
-              "medium": "Medium",
-              "large": "Large"
-            },
-            "default_value": "medium"
-          }
-        ]
+        "key": "field_card1_title",
+        "label": "Card 1 - Title",
+        "name": "card1_title",
+        "type": "text",
+        "default_value": "Title"
       },
       {
-        "key": "field_bottom_cards",
-        "label": "Bottom Card Row",
-        "name": "bottom_cards",
-        "type": "repeater",
-        "layout": "block",
-        "button_label": "Add Card",
-        "max": 3,
-        "sub_fields": [
-          {
-            "key": "field_bottom_card_title",
-            "label": "Title",
-            "name": "title",
-            "type": "text",
-            "default_value": "Title"
-          },
-          {
-            "key": "field_bottom_card_content",
-            "label": "Content",
-            "name": "content",
-            "type": "textarea",
-            "rows": 4
-          },
-          {
-            "key": "field_bottom_card_link_text",
-            "label": "Link Text",
-            "name": "link_text",
-            "type": "text",
-            "default_value": "LINK"
-          },
-          {
-            "key": "field_bottom_card_link_url",
-            "label": "Link URL",
-            "name": "link_url",
-            "type": "url"
-          }
-        ]
+        "key": "field_card1_content",
+        "label": "Card 1 - Content",
+        "name": "card1_content",
+        "type": "textarea",
+        "rows": 3
+      },
+      {
+        "key": "field_card1_size",
+        "label": "Card 1 - Size",
+        "name": "card1_size",
+        "type": "select",
+        "choices": {
+          "small": "Small",
+          "medium": "Medium",
+          "large": "Large"
+        },
+        "default_value": "large"
+      },
+      {
+        "key": "field_card2_title",
+        "label": "Card 2 - Title",
+        "name": "card2_title",
+        "type": "text",
+        "default_value": "Title"
+      },
+      {
+        "key": "field_card2_content",
+        "label": "Card 2 - Content",
+        "name": "card2_content",
+        "type": "textarea",
+        "rows": 3
+      },
+      {
+        "key": "field_card2_size",
+        "label": "Card 2 - Size",
+        "name": "card2_size",
+        "type": "select",
+        "choices": {
+          "small": "Small",
+          "medium": "Medium",
+          "large": "Large"
+        },
+        "default_value": "medium"
+      },
+      {
+        "key": "field_card3_title",
+        "label": "Card 3 - Title",
+        "name": "card3_title",
+        "type": "text",
+        "default_value": "Title"
+      },
+      {
+        "key": "field_card3_content",
+        "label": "Card 3 - Content",
+        "name": "card3_content",
+        "type": "textarea",
+        "rows": 3
+      },
+      {
+        "key": "field_card3_size",
+        "label": "Card 3 - Size",
+        "name": "card3_size",
+        "type": "select",
+        "choices": {
+          "small": "Small",
+          "medium": "Medium",
+          "large": "Large"
+        },
+        "default_value": "large"
+      },
+      {
+        "key": "field_card4_title",
+        "label": "Card 4 - Title",
+        "name": "card4_title",
+        "type": "text",
+        "default_value": "Title"
+      },
+      {
+        "key": "field_card4_content",
+        "label": "Card 4 - Content",
+        "name": "card4_content",
+        "type": "textarea",
+        "rows": 3
+      },
+      {
+        "key": "field_card4_size",
+        "label": "Card 4 - Size",
+        "name": "card4_size",
+        "type": "select",
+        "choices": {
+          "small": "Small",
+          "medium": "Medium",
+          "large": "Large"
+        },
+        "default_value": "medium"
+      },
+      {
+        "key": "field_card5_title",
+        "label": "Card 5 - Title",
+        "name": "card5_title",
+        "type": "text",
+        "default_value": "Title"
+      },
+      {
+        "key": "field_card5_content",
+        "label": "Card 5 - Content",
+        "name": "card5_content",
+        "type": "textarea",
+        "rows": 3
+      },
+      {
+        "key": "field_card5_size",
+        "label": "Card 5 - Size",
+        "name": "card5_size",
+        "type": "select",
+        "choices": {
+          "small": "Small",
+          "medium": "Medium",
+          "large": "Large"
+        },
+        "default_value": "large"
+      },
+      {
+        "key": "field_bottom_card1_title",
+        "label": "Bottom Card 1 - Title",
+        "name": "bottom_card1_title",
+        "type": "text",
+        "default_value": "Title"
+      },
+      {
+        "key": "field_bottom_card1_content",
+        "label": "Bottom Card 1 - Content",
+        "name": "bottom_card1_content",
+        "type": "textarea",
+        "rows": 4
+      },
+      {
+        "key": "field_bottom_card1_link_text",
+        "label": "Bottom Card 1 - Link Text",
+        "name": "bottom_card1_link_text",
+        "type": "text",
+        "default_value": "LINK"
+      },
+      {
+        "key": "field_bottom_card1_link_url",
+        "label": "Bottom Card 1 - Link URL",
+        "name": "bottom_card1_link_url",
+        "type": "url"
+      },
+      {
+        "key": "field_bottom_card2_title",
+        "label": "Bottom Card 2 - Title",
+        "name": "bottom_card2_title",
+        "type": "text",
+        "default_value": "Title"
+      },
+      {
+        "key": "field_bottom_card2_content",
+        "label": "Bottom Card 2 - Content",
+        "name": "bottom_card2_content",
+        "type": "textarea",
+        "rows": 4
+      },
+      {
+        "key": "field_bottom_card2_link_text",
+        "label": "Bottom Card 2 - Link Text",
+        "name": "bottom_card2_link_text",
+        "type": "text",
+        "default_value": "LINK"
+      },
+      {
+        "key": "field_bottom_card2_link_url",
+        "label": "Bottom Card 2 - Link URL",
+        "name": "bottom_card2_link_url",
+        "type": "url"
+      },
+      {
+        "key": "field_bottom_card3_title",
+        "label": "Bottom Card 3 - Title",
+        "name": "bottom_card3_title",
+        "type": "text",
+        "default_value": "Title"
+      },
+      {
+        "key": "field_bottom_card3_content",
+        "label": "Bottom Card 3 - Content",
+        "name": "bottom_card3_content",
+        "type": "textarea",
+        "rows": 4
+      },
+      {
+        "key": "field_bottom_card3_link_text",
+        "label": "Bottom Card 3 - Link Text",
+        "name": "bottom_card3_link_text",
+        "type": "text",
+        "default_value": "LINK"
+      },
+      {
+        "key": "field_bottom_card3_link_url",
+        "label": "Bottom Card 3 - Link URL",
+        "name": "bottom_card3_link_url",
+        "type": "url"
       },
       {
         "key": "field_pattern_enable",

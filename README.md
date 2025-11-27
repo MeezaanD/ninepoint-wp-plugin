@@ -6,8 +6,10 @@ A bespoke WordPress theme built from XD design specifications with ACF integrati
 
 ```
 devquiz-theme/
-├── style.css           # Main stylesheet with theme header
-├── functions.php       # Theme functions and setup
+
+├── src ── scripts.js  # navbar functionality
+├── style.css          # Main stylesheet with theme header
+├── functions.php      # Theme functions and setup
 ├── index.php          # Main template file
 ├── header.php         # Header template
 ├── footer.php         # Footer template

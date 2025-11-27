@@ -56,11 +56,12 @@ body {
 }
 
 .mobile-menu-toggle {
-    display: none;
+    display: block;
     background: none;
     border: none;
     cursor: pointer;
     padding: 10px;
+    z-index: 1001;
 }
 
 .hamburger {
@@ -442,4 +443,9 @@ body {
     .mobile-menu-toggle {
         display: block;
     }
+}
+
+/* Ensure body doesn't scroll when menu is open */
+body.menu-open {
+    overflow: hidden;
 }
