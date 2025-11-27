@@ -6,7 +6,7 @@ get_header(); ?>
 
 <!-- Hero Section -->
 <?php if(get_field('hero_enable')): ?>
-<section class="hero-section">
+<section class="hero-section" id="section1">
     <?php if(get_field('hero_label')): ?>
         <div class="hero-label"><?php the_field('hero_label'); ?></div>
     <?php endif; ?>
@@ -23,8 +23,11 @@ get_header(); ?>
 
 <!-- Content Blocks -->
 <?php if(have_rows('content_blocks')): ?>
-    <?php while(have_rows('content_blocks')): the_row(); ?>
-        <section class="content-block <?php echo get_sub_field('reverse_layout') ? 'reverse' : ''; ?>">
+    <?php 
+    $block_count = 2;
+    while(have_rows('content_blocks')): the_row(); 
+    ?>
+        <section class="content-block <?php echo get_sub_field('reverse_layout') ? 'reverse' : ''; ?>" id="section<?php echo $block_count; ?>">
             <?php if(get_sub_field('image')): ?>
                 <div class="content-block-image" style="background-image: url('<?php echo esc_url(get_sub_field('image')['url']); ?>'); background-size: cover; background-position: center;"></div>
             <?php else: ?>
@@ -49,12 +52,15 @@ get_header(); ?>
                 <?php endif; ?>
             </div>
         </section>
-    <?php endwhile; ?>
+    <?php 
+    $block_count++;
+    endwhile; 
+    ?>
 <?php endif; ?>
 
 <!-- Card Grid Section -->
 <?php if(get_field('card_grid_enable')): ?>
-<section class="card-grid-section">
+<section class="card-grid-section" id="section4">
     <div class="card-grid-header">
         <?php if(get_field('card_grid_dropdown_text')): ?>
             <select class="card-grid-dropdown">
@@ -86,7 +92,7 @@ get_header(); ?>
 
 <!-- Bottom Card Row -->
 <?php if(have_rows('bottom_cards')): ?>
-<section class="bottom-card-row">
+<section class="bottom-card-row" id="section5">
     <?php while(have_rows('bottom_cards')): the_row(); ?>
         <div class="card-with-link">
             <?php if(get_sub_field('title')): ?>
@@ -107,7 +113,7 @@ get_header(); ?>
 
 <!-- Geometric Pattern Section -->
 <?php if(get_field('pattern_enable')): ?>
-<section class="pattern-section">
+<section class="pattern-section" id="section6">
     <div class="geometric-pattern">
         <?php 
         // Pattern layout definition (6x6 grid)

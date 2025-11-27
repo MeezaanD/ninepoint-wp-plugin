@@ -17,9 +17,10 @@ function devquiz_theme_setup() {
 }
 add_action('after_setup_theme', 'devquiz_theme_setup');
 
-// Enqueue styles
+// Enqueue styles and scripts
 function devquiz_enqueue_styles() {
     wp_enqueue_style('devquiz-style', get_stylesheet_uri(), array(), '1.0.0');
+    wp_enqueue_script('devquiz-scripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'devquiz_enqueue_styles');
 
