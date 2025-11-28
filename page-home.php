@@ -174,28 +174,16 @@ get_header(); ?>
     <?php endif; ?>
 </section>
 
-<!-- Geometric Pattern Section -->
+<!-- Diagonal Pattern Section -->
 <?php if(get_field('pattern_enable')): ?>
-<section class="pattern-section" id="section6">
-    <div class="geometric-pattern">
-        <?php 
-        $pattern = array(
-            array('dark', 'dark', '', '', '', ''),
-            array('dark', 'dark', '', 'darker', 'darker', ''),
-            array('', '', '', 'darker', 'darker', ''),
-            array('', 'dark', 'dark', '', '', 'darker'),
-            array('', 'dark', 'dark', '', '', 'darker'),
-            array('', '', '', '', '', 'darker'),
-        );
-        
-        foreach($pattern as $row):
-            foreach($row as $cell):
-        ?>
-            <div class="pattern-block <?php echo esc_attr($cell); ?>"></div>
-        <?php 
-            endforeach;
-        endforeach; 
-        ?>
+<section class="diagonal-section" id="section6">
+    <div class="background-container">
+        <div class="square-container square1"></div>
+        <div class="square-container square2"></div>
+        <div class="square-container square3"></div>
+        <div class="square-container square4"></div>
+        <div class="square-container square5"></div>
+        <div class="square-container square6"></div>
     </div>
 </section>
 <?php endif; ?>
