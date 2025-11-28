@@ -12,7 +12,6 @@
 <div class="nav-overlay" id="navOverlay">
     <div class="nav-overlay-content">
         <div class="nav-overlay-left">
-            <!-- Left side content area (can add logo or hero content here) -->
         </div>
         <div class="nav-overlay-right">
             <nav class="overlay-navigation">
